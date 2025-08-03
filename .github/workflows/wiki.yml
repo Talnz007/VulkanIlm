@@ -22,15 +22,27 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
+      - name: Check if Wiki exists
+        id: wiki-check
+        run: |
+          if git ls-remote --exit-code https://github.com/${{ github.repository }}.wiki.git >/dev/null 2>&1; then
+            echo "exists=true" >> $GITHUB_OUTPUT
+          else
+            echo "exists=false" >> $GITHUB_OUTPUT
+          fi
+
       - name: Checkout Wiki
+        if: steps.wiki-check.outputs.exists == 'true'
         uses: actions/checkout@v4
         with:
           repository: ${{ github.repository }}.wiki
           path: wiki
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Sync Documentation to Wiki
+        if: steps.wiki-check.outputs.exists == 'true'
         run: |
-          # Copy all markdown files from docs to wiki
+          # Copy documentation files to wiki
           cp -r docs/* wiki/
 
           # Navigate to wiki directory
@@ -48,3 +60,11 @@ jobs:
 
           # Push changes
           git push
+
+      - name: Wiki Not Found Notice
+        if: steps.wiki-check.outputs.exists == 'false'
+        run: |
+          echo "⚠️  Wiki repository not found!"
+          echo "Please create your first wiki page manually at:"
+          echo "https://github.com/${{ github.repository }}/wiki"
+          echo "After creating the first page, this workflow will work automatically."
