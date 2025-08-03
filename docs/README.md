@@ -1,17 +1,10 @@
 # VulkanIlm 🚀🔥 – GPU-Accelerated Local LLMs for Everyone
 
-![GitHub stars](https://img.shields.io/github/stars/Talnz007/VulkanIlm?style=social)
-![GitHub forks](https://img.shields.io/github/forks/Talnz007/VulkanIlm?style=social)
+![GitHub stars](https://img.shields.io/github/stars/ggerganov/llama.cpp?style=social)
+![GitHub forks](https://img.shields.io/github/forks/ggerganov/llama.cpp?style=social)
 ![GitHub license](https://img.shields.io/github/license/Talnz007/VulkanIlm)
 ![Python version](https://img.shields.io/badge/python-3.9+-blue.svg)
 ![GitHub issues](https://img.shields.io/github/issues/Talnz007/VulkanIlm)
-![PyPI version](https://badge.fury.io/py/vulkanilm.svg)
-![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)
-![Contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg)
-
-
-![logo](docs/assets/vulkanilm-logo.png)
-
 
 **VulkanIlm** (from _"Vulkan"_ 🔥 + _"Ilm"_ 📚, meaning "knowledge" in Urdu/Arabic) is a Python library that brings GPU-accelerated local LLM inference to **AMD and Intel GPU users**—no CUDA required.
 

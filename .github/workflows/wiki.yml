@@ -1,0 +1,50 @@
+name: Update Wiki
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'docs/**'
+      - '.github/workflows/wiki.yml'
+
+concurrency:
+  group: wiki
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+
+jobs:
+  update_wiki:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Checkout Wiki
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ github.repository }}.wiki
+          path: wiki
+
+      - name: Sync Documentation to Wiki
+        run: |
+          # Copy all markdown files from docs to wiki
+          cp -r docs/* wiki/
+
+          # Navigate to wiki directory
+          cd wiki
+
+          # Configure git
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+
+          # Add all changes
+          git add .
+
+          # Commit if there are changes
+          git diff-index --quiet HEAD || git commit -m "📚 Auto-sync documentation from docs/ folder"
+
+          # Push changes
+          git push

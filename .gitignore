@@ -1,0 +1,101 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+.pytest_cache/
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+
+# Virtual environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# IDE specific files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS specific files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Project specific - Development files
+fix_*.py
+test_*.py
+tree.txt
+VP_VULKANINFO_*.json
+
+# Project specific - Auto-generated
+llama.cpp-auto/
+*.log
+
+# Poetry
+poetry.lock
+
+# Temporary files
+*.tmp
+*.temp
+docs/vulkanilm-docs/
+.flake8
+.isort.cfg
+.pre-commit-config.yaml
+
+# Large model files - users should download separately
+*.gguf
+*.bin
+*.safetensors
+
+# Auto-generated builds
+external/
+llama.cpp-auto/
+
+# Large temporary files
+*.tmp
+*.log
