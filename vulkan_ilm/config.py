@@ -10,7 +10,7 @@ PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Path to the llama.cpp binary - use the exact path you found
 DEFAULT_BINARY_PATH = os.path.join(
-    PROJECT_ROOT, "external", "llama.cpp", "build", "bin", "llama-cli"
+   PROJECT_ROOT, "llama.cpp-auto", "build", "bin", "llama-cli"
 )
 
 # Default model directory

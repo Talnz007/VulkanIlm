@@ -84,6 +84,7 @@ class Llama:
         possible_locations.extend(
             [
                 os.path.join(project_root, "external", "llama.cpp", "build", "bin", "llama-cli"),
+                os.path.join(project_root, "llama.cpp-auto", "build", "bin", "llama-cli"),
                 os.path.join(project_root, "external", "llama.cpp", "build", "bin", "main"),
                 os.path.join(project_root, "external", "llama.cpp", "build", "bin", "llama"),
             ]

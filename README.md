@@ -1,74 +1,93 @@
-# VulkanIlm 🚀🔥 – GPU-Accelerated Local LLMs for Everyone
+VulkanIlm 🚀🔥 – GPU-Accelerated Local LLMs for Everyone
 
-![GitHub stars](https://img.shields.io/github/stars/Talnz007/VulkanIlm?style=social)
-![GitHub forks](https://img.shields.io/github/forks/Talnz007/VulkanIlm?style=social)
-![GitHub license](https://img.shields.io/github/license/Talnz007/VulkanIlm)
-![Python version](https://img.shields.io/badge/python-3.9+-blue.svg)
-![GitHub issues](https://img.shields.io/github/issues/Talnz007/VulkanIlm)
-![PyPI version](https://badge.fury.io/py/vulkanilm.svg)
-![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)
-![Contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg)
+VulkanIlm (from "Vulkan" 🔥 + "Ilm" 📚, meaning "knowledge" in Urdu/Arabic) is a Python library that brings GPU-accelerated local LLM inference to AMD and Intel GPU users—no CUDA required.
 
+Built specifically for developers with legacy GPUs, VulkanIlm enables blazing-fast local inference using llama.cpp's](https://github.com/ggerganov/llama.cpp)'s) Vulkan backend.
+🎯 Why VulkanIlm?
 
-![logo](docs/assets/vulkanilm-logo.png)
+    Not everyone has an NVIDIA GPU. Everyone deserves fast local AI.
 
+The Problem: Most GPU acceleration libraries focus on CUDA, leaving AMD/Intel users with slow CPU-only inference.
 
-**VulkanIlm** (from _"Vulkan"_ 🔥 + _"Ilm"_ 📚, meaning "knowledge" in Urdu/Arabic) is a Python library that brings GPU-accelerated local LLM inference to **AMD and Intel GPU users**—no CUDA required.
+The Solution: VulkanIlm democratizes GPU-accelerated AI for all GPU brands using Vulkan.
+Key Features
 
-Built specifically for developers with legacy GPUs, VulkanIlm enables blazing-fast local inference using [`llama.cpp`](https://github.com/ggerganov/llama.cpp)'s Vulkan backend.
+    🚀 4-6x faster than CPU inference on legacy GPUs
 
----
+    🎮 Universal GPU support: AMD, Intel, and NVIDIA
 
-## 🎯 Why VulkanIlm?
+    🐍 Python-first with simple CLI tools
 
-> **Not everyone has an NVIDIA GPU. Everyone deserves fast local AI.**
+    ⚡ Auto-detection and optimization for your GPU
 
-**The Problem:** Most GPU acceleration libraries focus on CUDA, leaving AMD/Intel users with slow CPU-only inference.
+    📦 Zero-config installation with auto-building
 
-**The Solution:** VulkanIlm democratizes GPU-accelerated AI for **all GPU brands** using Vulkan.
+    🔄 Real-time streaming token generation
 
-### Key Features
+📊 Performance Results
 
-- 🚀 **4-6x faster** than CPU inference on legacy GPUs
-- 🎮 **Universal GPU support**: AMD, Intel, and NVIDIA
-- 🐍 **Python-first** with simple CLI tools
-- ⚡ **Auto-detection** and optimization for your GPU
-- 📦 **Zero-config installation** with auto-building
-- 🔄 **Real-time streaming** token generation
+Hardware
+	
 
----
+CPU Performance
+	
 
-## 📊 Performance Results
+Vulkan Performance
+	
 
-| Hardware | CPU Performance | Vulkan Performance | **Speedup** |
-|----------|-----------------|-------------------|-------------|
-| AMD RX 580 8GB | 188.47s | 44.74s | **4.21x** |
-| Intel Arc A770 | ~120s | ~25s | **4.8x** |
-| AMD RX 6600 | ~90s | ~18s | **5.0x** |
+Speedup
 
-*Benchmarked with Gemma-3n-E4B-it model (6.9B parameters)*
+AMD RX 580 8GB
+	
 
----
+188.47s
+	
 
-## 📦 Installation
+44.74s
+	
 
-### Quick Start
+4.21x
 
-```bash
+Intel Arc A770
+	
+
+~120s
+	
+
+~25s
+	
+
+4.8x
+
+AMD RX 6600
+	
+
+~90s
+	
+
+~18s
+	
+
+5.0x
+
+Benchmarked with Gemma-3n-E4B-it model (6.9B parameters)
+📦 Installation
+Quick Start
+
 git clone https://github.com/Talnz007/VulkanIlm.git
 cd VulkanIlm
 pip install -e .
-```
 
-### Prerequisites
+Prerequisites
 
-- **Python 3.9+**
-- **Vulkan-capable GPU** (AMD RX 400+, Intel Arc/Xe, NVIDIA GTX 900+)
-- **Vulkan drivers** installed
+    Python 3.9+
 
-### Install Vulkan Drivers (if needed)
+    Vulkan-capable GPU (AMD RX 400+, Intel Arc/Xe, NVIDIA GTX 900+)
 
-```bash
+    Vulkan drivers installed
+
+Install Vulkan Drivers (if needed)
+
 # Ubuntu/Debian
 sudo apt install vulkan-tools libvulkan-dev
 
@@ -77,15 +96,10 @@ sudo dnf install vulkan-tools vulkan-devel
 
 # Test installation
 vulkaninfo
-```
 
----
+🚀 Usage
+CLI Interface
 
-## 🚀 Usage
-
-### CLI Interface
-
-```bash
 # Auto-install llama.cpp with Vulkan support
 vulkanilm install
 
@@ -104,11 +118,9 @@ vulkanilm stream model.gguf "Tell me a story about AI"
 
 # Benchmark CPU vs GPU performance
 vulkanilm benchmark "Test prompt"
-```
 
-### Python API
+Python API
 
-```python
 from vulkan_ilm import Llama
 
 # Load model with automatic GPU optimization
@@ -121,62 +133,114 @@ print(response)
 # Stream tokens in real-time
 for token in llm.stream_ask_real("Tell me about Vulkan API"):
     print(token, end='', flush=True)
-```
 
----
+🎮 Supported Hardware
+Tested GPUs
 
-## 🎮 Supported Hardware
+Brand
+	
 
-### Tested GPUs
+Models
+	
 
-| Brand | Models | Status | Performance |
-|-------|--------|--------|-------------|
-| **AMD** | RX 580, RX 590, RX 6600, RX 6700 | ✅ Excellent | 4-5x speedup |
-| **Intel** | Arc A770, Arc A750, Xe Graphics | ✅ Great | 4-5x speedup |
-| **NVIDIA** | GTX 1060+, RTX series | ✅ Excellent | 4-6x speedup |
+Status
+	
 
----
+Performance
 
-## 🛠️ Troubleshooting
+AMD
+	
 
-### Common Issues
+RX 580, RX 590, RX 6600, RX 6700
+	
 
-**❌ `vulkanilm: command not found`**
+✅ Excellent
+	
 
-```bash
-# Ensure you installed the package correctly
+4-5x speedup
+
+Intel
+	
+
+Arc A770, Arc A750, Xe Graphics
+	
+
+✅ Great
+	
+
+4-5x speedup
+
+NVIDIA
+	
+
+GTX 1060+, RTX series
+	
+
+✅ Excellent
+	
+
+4-6x speedup
+🛠️ Troubleshooting Common Installation Issues (Linux)
+
+Here are some common errors you might encounter during installation and how to resolve them.
+❌ vulkanilm: command not found
+
+This error means your shell cannot find the vulkanilm executable. It's often caused by the pip install -e . command not properly setting up the symbolic link or your virtual environment not being activated.
+
+Solution:
+
+First, ensure you are in an activated virtual environment.
+
+# To create and activate a virtual environment
+python3 -m venv venv
+source venv/bin/activate
+
+# Then, re-run the installation
 pip install -e .
-poetry install  # if using Poetry
 
-# Check if CLI is available
-which vulkanilm
-```
+If you are using poetry as indicated in pyproject.toml, you can run the command directly through poetry to avoid path issues:
 
-**❌ `No Vulkan support detected`**
+poetry run vulkanilm install
 
-```bash
-# Install Vulkan tools and test
-sudo apt install vulkan-tools libvulkan-dev
-vulkaninfo
+❌ Could NOT find Vulkan (missing: glslc)
 
-# Update GPU drivers
-```
+This error occurs when the cmake build process for llama.cpp cannot find the glslc shader compiler, which is a key part of the Vulkan SDK.
 
-**❌ `Model hangs or uses too much VRAM`**
+Solution:
 
-```bash
-# Use fewer GPU layers
-vulkanilm ask model.gguf --gpu-layers 8 -p "test"
+You need to install the package that provides glslc.
 
-# Or force CPU mode for testing
-vulkanilm ask model.gguf --cpu -p "test"
-```
+    On Fedora/RHEL:
 
----
+    sudo dnf install glslc
 
-## 🏗️ Architecture
+    On Ubuntu/Debian:
 
-```
+    # `glslc` is typically part of the vulkan-tools or vulkan-sdk package
+    sudo apt install vulkan-tools
+
+After installation, verify that the command is available:
+
+glslc --version
+
+❌ Could NOT find CURL
+
+This error happens when the cmake build process can't locate the libcurl development libraries, which are required for llama.cpp to download models.
+
+Solution:
+
+Install the development package for libcurl.
+
+    On Fedora/RHEL:
+
+    sudo dnf install libcurl-devel
+
+    On Ubuntu/Debian:
+
+    sudo apt install libcurl4-openssl-dev
+
+🏗️ Architecture
+
 VulkanIlm/
 ├── vulkan_ilm/
 │   ├── cli.py              # Command-line interface
@@ -188,45 +252,36 @@ VulkanIlm/
 │   └── streaming.py        # Real-time token streaming
 ├── pyproject.toml          # Poetry configuration
 └── README.md
-```
 
----
-
-## 🤝 Contributing
+🤝 Contributing
 
 We welcome contributions! Areas where you can help:
 
-- **GPU Testing**: Test on different AMD/Intel/NVIDIA cards
-- **Model Support**: Add support for new model formats
-- **Performance**: Optimize memory usage and speed
-- **Documentation**: Improve guides and examples
+    GPU Testing: Test on different AMD/Intel/NVIDIA cards
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for details.
+    Model Support: Add support for new model formats
 
----
+    Performance: Optimize memory usage and speed
 
-## 🧾 The Story Behind "VulkanIlm"
+    Documentation: Improve guides and examples
 
-In South Asian and Islamic culture, **"Ilm" (علم)** represents *knowledge*, wisdom, and enlightenment.
+See CONTRIBUTING.md for details.
+🧾 The Story Behind "VulkanIlm"
 
-Combined with **Vulkan**—a high-performance GPU API—this project embodies **"knowledge on fire"** 🔥: making advanced AI accessible to everyone, regardless of their GPU brand or budget.
+In South Asian and Islamic culture, "Ilm" (علم) represents knowledge, wisdom, and enlightenment.
 
-**Our mission:** Democratize local AI inference for the global developer community.
+Combined with Vulkan—a high-performance GPU API—this project embodies "knowledge on fire" 🔥: making advanced AI accessible to everyone, regardless of their GPU brand or budget.
 
----
+Our mission: Democratize local AI inference for the global developer community.
+📄 License
 
-## 📄 License
+MIT License - see LICENSE for details.
+📞 Support & Links
 
-MIT License - see [LICENSE](LICENSE) for details.
+    GitHub: https://github.com/Talnz007/VulkanIlm
 
----
+    Issues: Report bugs or request features
 
-## 📞 Support & Links
+    Discussions: Community Q&A
 
-- **GitHub**: [https://github.com/Talnz007/VulkanIlm](https://github.com/Talnz007/VulkanIlm)
-- **Issues**: [Report bugs or request features](https://github.com/Talnz007/VulkanIlm/issues)
-- **Discussions**: [Community Q&A](https://github.com/Talnz007/VulkanIlm/discussions)
-
----
-
-> **🔥 Built with passion by [@Talnz007](https://github.com/Talnz007) — Bringing fast, local AI to legacy GPUs everywhere**
+    🔥 Built with passion by @Talnz007 — Bringing fast, local AI to legacy GPUs everywhere
