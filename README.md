@@ -1,4 +1,9 @@
 # VulkanIlm 🚀🔥
+[![PyPI version](https://badge.fury.io/py/vulkan-ilm.svg)](https://pypi.org/project/vulkan-ilm/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Documentation](https://img.shields.io/badge/docs-online-brightgreen)](https://talnz007.github.io/VulkanIlm/#/)
+[![GitHub issues](https://img.shields.io/github/issues/Talnz007/VulkanIlm)](https://github.com/Talnz007/VulkanIlm/issues)
+
 **GPU-Accelerated Local LLMs for Everyone (Vulkan + Ilm — "knowledge")**
 
 VulkanIlm is a Python-first wrapper and CLI around `llama.cpp`'s **Vulkan** backend that brings fast local LLM inference to AMD, Intel, and NVIDIA GPUs — **no CUDA required**. Built for developers with legacy or non-NVIDIA hardware.
@@ -236,6 +241,8 @@ MIT — see `LICENSE` for details.
 * **Repo:** [https://github.com/Talnz007/VulkanIlm](https://github.com/Talnz007/VulkanIlm)
 * **Issues:** Report bugs or request features on GitHub
 * **Discussions:** Community Q\&A
+* 📘 **Full Documentation:** [https://talnz007.github.io/VulkanIlm/#/](https://talnz007.github.io/VulkanIlm/#/)
+
 
 ---
 
